@@ -1,8 +1,7 @@
-package dev.enricogollner.dslist.controller;
+package dev.enricogollner.dslist.controllers;
 
 import dev.enricogollner.dslist.dto.GameMinDTO;
-import dev.enricogollner.dslist.entities.Game;
-import dev.enricogollner.dslist.service.GameService;
+import dev.enricogollner.dslist.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +16,8 @@ public class GameController {
     private GameService gameService;
 
     @GetMapping
-    public List<Game> findAll() {
-        List<Game> result = gameService.findAll();
+    public List<GameMinDTO> findAll() {
+        List<GameMinDTO> result = gameService.findAll();
         return result;
     }
 }
