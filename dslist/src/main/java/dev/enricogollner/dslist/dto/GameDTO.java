@@ -1,6 +1,7 @@
 package dev.enricogollner.dslist.dto;
 
 import dev.enricogollner.dslist.entities.Game;
+import dev.enricogollner.dslist.projections.GameMinProjection;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,6 +25,9 @@ public class GameDTO {
     public GameDTO(Game entity) {
         BeanUtils.copyProperties(entity, this);  // Copiando tudo o que há em entity para o objeto em questão (funciona pois possui os mesmos atributos)
     }
+
+
+
 
     // Mas para que a copyProperties funcione, temos que ter get e set para cada atributo nesse DTO (geralmente DTO só tem SETTERS).
 
